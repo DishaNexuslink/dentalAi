@@ -11,10 +11,10 @@ load_dotenv()
 client = wrap_openai(openai.Client())
 
 # in streamlit cloud need to uncomment
-# os.environ["LANGSMITH_API_KEY"] = st.secrets["LANGSMITH_API_KEY"]
-# os.environ["LANGSMITH_PROJECT"] = st.secrets["LANGSMITH_PROJECT"]
-# os.environ["LANGSMITH_TRACING"] = "true"
-# os.environ["LANGSMITH_ENDPOINT"] = st.secrets["LANGSMITH_ENDPOINT"]
+os.environ["LANGSMITH_API_KEY"] = st.secrets["LANGSMITH_API_KEY"]
+os.environ["LANGSMITH_PROJECT"] = st.secrets["LANGSMITH_PROJECT"]
+os.environ["LANGSMITH_TRACING"] = "true"
+os.environ["LANGSMITH_ENDPOINT"] = st.secrets["LANGSMITH_ENDPOINT"]
 
 
 # Load prompt

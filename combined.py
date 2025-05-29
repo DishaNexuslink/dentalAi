@@ -9,7 +9,7 @@ from langsmith import traceable
 # Load environment variables
 load_dotenv()
 client = wrap_openai(openai.Client())
-LANGSMITH_TRACING=true
+LANGSMITH_TRACING="true"
 LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
 LANGSMITH_API_KEY="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"
 LANGSMITH_PROJECT="dental ai"

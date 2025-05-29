@@ -9,10 +9,13 @@ from langsmith import traceable
 # Load environment variables
 load_dotenv()
 client = wrap_openai(openai.Client())
-LANGSMITH_TRACING="true"
-LANGSMITH_ENDPOINT="https://api.smith.langchain.com"
-LANGSMITH_API_KEY="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"
-LANGSMITH_PROJECT="dental ai"
+
+os.environ["LANGCHAIN_API_KEY"] = st.secrets["LANGCHAIN_API_KEY"]
+os.environ["LANGCHAIN_PROJECT"] = st.secrets["LANGCHAIN_PROJECT"]
+os.environ["LANGCHAIN_TRACING_V2"] = "true"
+os.environ["LANGSMITH_ENDPOINT"] = st.secrets["LANGSMITH_ENDPOINT"]
+
+
 # Load prompt
 try:
     with open("combined prompt.txt", "r", encoding="utf-8") as f:

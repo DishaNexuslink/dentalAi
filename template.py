@@ -10,15 +10,16 @@ from langsmith import traceable
 load_dotenv()
 client = wrap_openai(openai.Client())
 
-os.environ["LANGSMITH_API_KEY"] = st.secrets["LANGSMITH_API_KEY"]
-os.environ["LANGSMITH_PROJECT"] = st.secrets["LANGSMITH_PROJECT"]
-os.environ["LANGSMITH_TRACING"] = "true"
-os.environ["LANGSMITH_ENDPOINT"] = st.secrets["LANGSMITH_ENDPOINT"]
+# in streamlit cloud need to uncomment
+# os.environ["LANGSMITH_API_KEY"] = st.secrets["LANGSMITH_API_KEY"]
+# os.environ["LANGSMITH_PROJECT"] = st.secrets["LANGSMITH_PROJECT"]
+# os.environ["LANGSMITH_TRACING"] = "true"
+# os.environ["LANGSMITH_ENDPOINT"] = st.secrets["LANGSMITH_ENDPOINT"]
 
 
 # Load prompt
 try:
-    with open("combined prompt.txt", "r", encoding="utf-8") as f:
+    with open("template.txt", "r", encoding="utf-8") as f:
         base_prompt = f.read()
 except Exception as e:
     st.error(f"❌ Failed to load prompt: {e}")
